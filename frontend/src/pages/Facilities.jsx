@@ -288,7 +288,7 @@ export const Facilities = () => {
 
             <div className="flex justify-end gap-2 pt-2">
               <a
-                href="https://wa.me/919876543210?text=Hello%20Sunil%20PG,%20please%20send%20me%20the%20video%20tour."
+                href="https://wa.me/919876703899?text=Hello%20Sunil%20PG,%20please%20send%20me%20the%20video%20tour."
                 target="_blank"
                 rel="noreferrer"
                 className="btn bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-xs py-2 px-4 rounded-xl"

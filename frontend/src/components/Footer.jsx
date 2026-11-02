@@ -45,7 +45,7 @@ export const Footer = () => {
             <div className="space-y-3 text-sm">
               <div className="flex items-center gap-2">
                 <Phone className="w-4 h-4 text-primary-400 flex-shrink-0" />
-                <span>+91 98765 43210</span>
+                <a href="tel:+919876703899" className="hover:text-white transition">+91 98767 03899</a>
               </div>
               <div className="flex items-center gap-2">
                 <Mail className="w-4 h-4 text-primary-400 flex-shrink-0" />
@@ -53,7 +53,7 @@ export const Footer = () => {
               </div>
               <div className="flex items-start gap-2">
                 <MapPin className="w-4 h-4 text-primary-400 flex-shrink-0 mt-0.5" />
-                <span>Chachoki Colony, Phagwara</span>
+                <span>Chachoki Colony, Near Choti Pulli, Phagwara</span>
               </div>
             </div>
           </div>

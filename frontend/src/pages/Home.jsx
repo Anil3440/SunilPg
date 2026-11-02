@@ -275,13 +275,19 @@ export const Home = () => {
         <div className="flex-1 flex flex-col justify-center pt-22 sm:pt-24 lg:pt-26 pb-3 sm:pb-4 px-4 sm:px-6 lg:px-8 relative z-10 w-full max-w-7xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-center w-full">
             {/* Left Column: Clean, Editorial Left-Aligned Content */}
-            <div className="lg:col-span-7 text-left space-y-3.5 sm:space-y-4">
-              {/* Glowing Top Banner */}
-              <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-white/10 backdrop-blur-md border border-amber-400/40 shadow-lg">
-                <span className="w-2 h-2 rounded-full bg-amber-400 animate-ping" />
-                <span className="text-xs sm:text-sm font-extrabold text-amber-300 tracking-wide uppercase">
-                  ✨ Premium 1 BHK & 2 BHK Luxury Living • 0% Brokerage
-                </span>
+            <div className="lg:col-span-7 text-left space-y-3 sm:space-y-3.5">
+              {/* Top Banner & Verified Location Badges */}
+              <div className="flex flex-wrap items-center gap-2">
+                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 backdrop-blur-md border border-amber-400/40 shadow-sm">
+                  <span className="w-2 h-2 rounded-full bg-amber-400 animate-ping" />
+                  <span className="text-xs font-black text-amber-300 tracking-wide uppercase">
+                    ✨ Premium 1 & 2 BHK Living • 0% Brokerage
+                  </span>
+                </div>
+                <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-xs text-primary-100 font-bold shadow-sm">
+                  <MapPin className="w-3.5 h-3.5 text-amber-400 flex-shrink-0" />
+                  <span>Chachoki Colony, Near Choti Pulli, Phagwara</span>
+                </div>
               </div>
 
               {/* Main Hero Headline */}
@@ -313,28 +319,36 @@ export const Home = () => {
                 </span>
               </div>
 
-              {/* Hero CTAs */}
-              <div className="flex flex-wrap items-center gap-3 pt-1.5">
+              {/* Hero CTAs (Including Direct Call Owner Button) */}
+              <div className="flex flex-wrap items-center gap-2.5 sm:gap-3 pt-1.5">
+                <a 
+                  href="tel:+919876703899"
+                  className="px-5 py-3 bg-emerald-600 hover:bg-emerald-500 text-white font-black rounded-xl shadow-lg hover:shadow-emerald-500/25 transition-all transform hover:-translate-y-0.5 flex items-center justify-center gap-2 text-xs sm:text-sm whitespace-nowrap border border-emerald-400/40 group"
+                >
+                  <PhoneCall className="w-4 h-4 text-emerald-100 group-hover:scale-110 transition-transform" />
+                  <span>Call Owner: <strong>9876703899</strong></span>
+                </a>
+
                 <a 
                   href="#facilities-section"
-                  className="px-6 py-3 bg-gradient-to-r from-amber-400 via-amber-500 to-yellow-500 hover:from-amber-500 hover:to-yellow-600 text-gray-950 font-black rounded-xl shadow-lg hover:shadow-amber-500/25 transition-all transform hover:-translate-y-0.5 flex items-center justify-center gap-2 text-xs sm:text-sm whitespace-nowrap"
+                  className="px-5 py-3 bg-gradient-to-r from-amber-400 via-amber-500 to-yellow-500 hover:from-amber-500 hover:to-yellow-600 text-gray-950 font-black rounded-xl shadow-lg hover:shadow-amber-500/25 transition-all transform hover:-translate-y-0.5 flex items-center justify-center gap-1.5 text-xs sm:text-sm whitespace-nowrap"
                 >
                   Explore 9 Free Facilities <ArrowRight className="w-4 h-4" />
                 </a>
                 
                 <button
                   onClick={() => openVideoTour('Sunil PG Campus & 2 BHK Video Tour', 'Take an inside walkthrough of our spacious hall, split AC rooms, gym, and park.', 'Virtual Walkthrough')}
-                  className="px-5 py-3 bg-white/15 hover:bg-white/25 text-white font-bold rounded-xl border border-white/30 backdrop-blur-md transition-all flex items-center justify-center gap-2 text-xs sm:text-sm group whitespace-nowrap"
+                  className="px-4 py-3 bg-white/15 hover:bg-white/25 text-white font-bold rounded-xl border border-white/30 backdrop-blur-md transition-all flex items-center justify-center gap-1.5 text-xs sm:text-sm group whitespace-nowrap"
                 >
-                  <Play className="w-4 h-4 text-amber-400 fill-amber-400 group-hover:scale-110 transition-transform" />
-                  Watch Video Tour (See Video)
+                  <Play className="w-3.5 h-3.5 text-amber-400 fill-amber-400 group-hover:scale-110 transition-transform" />
+                  Video Tour
                 </button>
 
                 <Link 
                   to="/register" 
-                  className="px-5 py-3 bg-primary-700/80 hover:bg-primary-600 text-white font-bold rounded-xl border border-primary-400/30 transition text-xs sm:text-sm whitespace-nowrap"
+                  className="px-4 py-3 bg-primary-700/80 hover:bg-primary-600 text-white font-bold rounded-xl border border-primary-400/30 transition text-xs sm:text-sm whitespace-nowrap"
                 >
-                  Create Account
+                  Register
                 </Link>
               </div>
             </div>
@@ -344,12 +358,16 @@ export const Home = () => {
               <div className="absolute -inset-1 bg-gradient-to-r from-amber-500/30 to-primary-600/30 rounded-3xl blur-xl group-hover:blur-2xl transition duration-500" />
               
               <div className="relative rounded-3xl bg-slate-900/75 backdrop-blur-xl border border-white/20 p-5 shadow-2xl space-y-3.5 text-left">
-                <div className="flex items-center justify-between pb-3 border-b border-white/10">
+                <div className="flex items-start justify-between pb-3 border-b border-white/10 gap-2">
                   <div>
                     <span className="text-[10px] font-bold uppercase tracking-wider text-amber-300">Verified Living Near LPU</span>
                     <h3 className="text-base font-black text-white">Sunil PG & Flats</h3>
+                    <p className="text-[11px] text-gray-300 flex items-center gap-1 mt-0.5">
+                      <MapPin className="w-3 h-3 text-amber-400 flex-shrink-0" />
+                      Chachoki Colony, Near Choti Pulli, Phagwara
+                    </p>
                   </div>
-                  <span className="px-2.5 py-1 rounded-full text-[10px] font-extrabold bg-emerald-500/20 text-emerald-300 border border-emerald-500/30 flex items-center gap-1">
+                  <span className="px-2.5 py-1 rounded-full text-[10px] font-extrabold bg-emerald-500/20 text-emerald-300 border border-emerald-500/30 flex items-center gap-1 flex-shrink-0">
                     <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
                     Admissions Open
                   </span>
@@ -392,11 +410,15 @@ export const Home = () => {
                   <ChevronRight className="w-4 h-4 text-amber-300 group-hover/btn:translate-x-0.5 transition-transform" />
                 </button>
 
-                {/* Trust Badge Footer */}
+                {/* Trust Badge Footer with Direct Call Action */}
                 <div className="flex items-center justify-between pt-1 text-[11px] text-gray-400">
-                  <span className="flex items-center gap-1 text-amber-300 font-bold">
-                    ⭐ 4.9 / 5 Rating from Parents
-                  </span>
+                  <a 
+                    href="tel:+919876703899"
+                    className="flex items-center gap-1.5 text-amber-300 hover:text-amber-200 font-bold transition"
+                  >
+                    <PhoneCall className="w-3.5 h-3.5 text-emerald-400" />
+                    <span>Call: 98767 03899</span>
+                  </a>
                   <span className="text-emerald-400 font-bold">0% Brokerage</span>
                 </div>
               </div>
@@ -811,11 +833,11 @@ export const Home = () => {
             </Link>
             
             <a 
-              href="tel:+919876543210" 
+              href="tel:+919876703899" 
               className="px-7 py-3.5 bg-white text-gray-900 font-bold rounded-xl hover:bg-gray-100 transition text-sm sm:text-base flex items-center gap-2"
             >
               <PhoneCall className="w-4 h-4 text-emerald-600" />
-              Call Owner Directly
+              Call Owner: 9876703899
             </a>
 
             <Link 
@@ -875,7 +897,7 @@ export const Home = () => {
               </span>
               <div className="flex items-center gap-2">
                 <a
-                  href="https://wa.me/919876543210?text=Hello%20Sunil%20PG,%20please%20send%20me%20the%20video%20tour%20of%201BHK/2BHK%20rooms."
+                  href="https://wa.me/919876703899?text=Hello%20Sunil%20PG,%20please%20send%20me%20the%20video%20tour%20of%201BHK/2BHK%20rooms."
                   target="_blank"
                   rel="noreferrer"
                   className="btn bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-xs py-2 px-4 rounded-xl flex items-center gap-1.5"

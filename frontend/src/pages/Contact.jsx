@@ -52,8 +52,8 @@ export const Contact = () => {
                 <Phone className="w-5 h-5 text-amber-400" />
               </div>
               <div>
-                <p className="text-xs text-primary-300">Call / WhatsApp</p>
-                <p className="text-base font-semibold">+91 98765 43210</p>
+                <p className="text-xs text-primary-300">Call / WhatsApp (Owner)</p>
+                <a href="tel:+919876703899" className="text-base font-bold hover:text-amber-300 transition">+91 98767 03899</a>
               </div>
             </div>
 
@@ -73,7 +73,7 @@ export const Contact = () => {
               </div>
               <div>
                 <p className="text-xs text-primary-300">Head Office</p>
-                <p className="text-base font-semibold">Chachoki Colony, Phagwara</p>
+                <p className="text-base font-semibold">Chachoki Colony, Near Choti Pulli, Phagwara</p>
               </div>
             </div>
           </div>
