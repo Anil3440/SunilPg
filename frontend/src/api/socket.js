@@ -4,9 +4,10 @@ let socket = null;
 
 export const getSocket = () => {
   if (!socket) {
-    // When running behind Vite dev server proxy or direct, connect cleanly:
+    // Connect to production URL if configured, otherwise fallback to local 5000
+    const envUrl = import.meta.env.VITE_API_URL;
     const host = window.location.hostname || '127.0.0.1';
-    const socketUrl = `http://${host}:5000`;
+    const socketUrl = envUrl ? envUrl.replace(/\/api\/?$/, '') : `http://${host}:5000`;
 
     socket = io(socketUrl, {
       transports: ['websocket', 'polling'],
