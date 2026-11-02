@@ -24,7 +24,11 @@ const contactRoutes = require('./routes/contactRoutes');
 const app = express();
 
 // Middleware
-app.use(cors({ origin: '*' }));
+const clientUrl = process.env.CLIENT_URL || process.env.FRONTEND_URL;
+app.use(cors({ 
+  origin: clientUrl ? [clientUrl.replace(/\/$/, ''), 'http://localhost:5173', 'http://127.0.0.1:5173'] : '*',
+  credentials: true 
+}));
 app.use(express.json());
 app.use(morgan('dev'));
 

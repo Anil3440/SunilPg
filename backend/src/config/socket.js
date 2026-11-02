@@ -4,10 +4,12 @@ const Ticket = require('../models/Ticket');
 let io = null;
 
 const initSocket = (httpServer) => {
+  const clientUrl = process.env.CLIENT_URL || process.env.FRONTEND_URL;
   io = new Server(httpServer, {
     cors: {
-      origin: '*',
+      origin: clientUrl ? [clientUrl.replace(/\/$/, ''), 'http://localhost:5173', 'http://127.0.0.1:5173'] : '*',
       methods: ['GET', 'POST', 'PATCH'],
+      credentials: true,
     },
   });
 
