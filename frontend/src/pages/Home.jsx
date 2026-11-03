@@ -97,7 +97,7 @@ export const Home = () => {
       tag: 'Resident Life & Festivals',
       title: 'Festive Celebrations & Weekend Community Gatherings',
       desc: 'Diwali feasts, Holi celebrations, birthday bashes, and community movie nights with like-minded students.',
-      image: 'https://images.unsplash.com/photo-1511632765486-a01980e01a18?auto=format&fit=crop&w=1200&q=80',
+      image: 'https://res.cloudinary.com/qingzpik/image/upload/v1793703792/WhatsApp_Image_2026-11-02_at_16.12.38_2.jpg',
       badge: 'Friendly Student Community',
       videoText: 'Watch Festival Celebrations'
     },
@@ -106,7 +106,7 @@ export const Home = () => {
       tag: 'Hygienic Dining',
       title: 'Nutritious 3-Time Fresh Home-Style Meals',
       desc: 'Wholesome breakfast, lunch, and dinner prepared in clean certified kitchens with seasonal healthy menus.',
-      image: 'https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=1200&q=80',
+      image: 'https://res.cloudinary.com/qingzpik/image/upload/v1793703792/WhatsApp_Image_2026-11-02_at_16.12.37.jpg',
       badge: '3-Times Daily Fresh Meals',
       videoText: 'Watch Kitchen & Dining Video'
     }
